@@ -8,10 +8,10 @@
             width: 140px;
             height: 60px;
             border-radius: 5px;
-        }    
+        }
         #output{
             font-size: 4.0em;
-            margin-left: 40px;
+            margin: 20px auto;
         }
         #startPause{
             background-color: green;
@@ -22,20 +22,10 @@
             border-color: gray;
         }
         .containerMrs{
-            background-color: #eeeeee;
-            border-radius: 5px;
-            margin: auto;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            width: 400px;
-            height: 200px;
+            text-align:center;
         }
-        #controls{
-            margin-left: 50px;
-            margin-top: 10px;
-            width: 310px;
-            height: 70px;
-        }
+        .containerMrs iframe{width: 640px; height:480px;}
+        #controls {}
     </style>
     <script>
         var time=0;
@@ -86,13 +76,13 @@
     </head>
     <body>
         <div class="containerMrs">
+            <iframe src="http://127.0.0.1:8000/monitor/"></iframe>
             <p id="output"><b>0:00:00:00</b></p>
-            <div id="controls" align="center">
+            <div id="controls">
                 <button id="startPause" onclick="startPause()"><b id="start">시작</b></button>
                 <button id="reset" onclick="reset()"><b id="reset">리셋</b></button>
             </div>
-        
-        
+
         </div>
     </body>
 </html>
