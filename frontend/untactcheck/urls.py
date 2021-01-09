@@ -21,6 +21,6 @@ from camera import VideoCamera, gen
 #webapp 폴더에 있는 urls.py를 포함시키겠따.
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('monitor/', lambda r: StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')),
+    path('monitor/', lambda r: StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')),
     path('', include('webapp.urls')),
 ]
