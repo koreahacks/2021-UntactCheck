@@ -1,28 +1,35 @@
 <!DOCTYPE html>
+
 <html>
     <head>
     <title>UntactCheck</title>
     <style>
+        @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+        body {font-family: 'Spoqa Han Sans'}
         button{
+            font-family: 'Spoqa Han Sans';
             font-size: 30px;
             width: 140px;
             height: 60px;
-            border-radius: 5px;
+            border-radius: 10px;
+            margin-right: 20px;
         }
         #output{
             font-size: 4.0em;
             margin: 20px auto;
         }
         #startPause{
-            background-color: green;
-            border-color: green;
+            background-color: lightsteelblue;
         }
         #reset{
-            background-color:gray;
-            border-color: gray;
+            background-color:lightgray;
         }
         .containerMrs{
             text-align:center;
+            background:url("https://mblogthumb-phinf.pstatic.net/MjAxNzA1MzFfMTg4/MDAxNDk2MjM1OTI3OTcy.bLluHU-mz94gRX5g64-XhEFmkI4du_dOCwOGnEgStvsg.zR1DrVMbSSi4uNduZCZy8hLV-QTMkVYobpX8JJqvvVEg.JPEG.wecho94/%EC%96%B4%ED%94%BC%EC%B9%986.jpg?type=w800") no-repeat;
+            padding: 20px;
+            background-color: rgb(180, 198, 210);
+            background-position: 125% 100%;
         }
         .containerMrs iframe{width: 640px; height:480px;}
         #controls {}
@@ -35,14 +42,14 @@
                 running=1;
                 increment();
             document.getElementById("start").innerHTML="일시중지";
-            document.getElementById("startPause").style.backgroundColor="red";
-            document.getElementById("startPause").style.borderColor="red";
+            document.getElementById("startPause").style.backgroundColor="rgb(86,120,143)";
+            document.getElementById("startPause");
             }
             else{
                 running=0;
                 document.getElementById("start").innerHTML="계속";
-                document.getElementById("startPause").style.backgroundColor="green";
-                document.getElementById("startPause").style.borderColor="green";
+                document.getElementById("startPause").style.backgroundColor="lightsteelblue";
+                document.getElementById("startPause");
             }
         }
         function reset(){
@@ -50,8 +57,8 @@
             time=0;
             document.getElementById("start").innerHTML="시작";
             document.getElementById("output").innerHTML="0:00:00:00";
-            document.getElementById("startPause").style.backgroundColor="green";
-            document.getElementById("startPause").style.borderColor="green";
+            document.getElementById("startPause");
+            document.getElementById("startPause");
         }
         function increment(){
             if(running==1){
@@ -75,6 +82,7 @@
     </script>
     </head>
     <body>
+
         <div class="containerMrs">
             <iframe src="http://127.0.0.1:8000/monitor/"></iframe>
             <p id="output"><b>0:00:00:00</b></p>

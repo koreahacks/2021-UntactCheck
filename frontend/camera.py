@@ -1,5 +1,5 @@
 import cv2
-
+import winsound as sd
 
 class VideoCamera(object):
     def __init__(self):
@@ -15,12 +15,17 @@ class VideoCamera(object):
         faces=face_cascade.detectMultiScale(image_gray, 1.3, 5)
 
         for (x,y,w,h) in faces:
-            cv2.rectangle(image, (x,y),(x+w,y+h),(255,0,0),2)
             roi_gray=image_gray[y:y+h, x:x+w]
             roi_color=image[y:y+h, x:x+w]
+            if (w > 240 or h > 240):
+                fr = 2000
+                du = 1000
+                sd.Beep(fr, du)
+                cv2.rectangle(image, (x, y), (x + w, y + h), (61,61,204), 2)
+            else:
+                cv2.rectangle(image, (x, y), (x + w, y + h), (127,229,134), 2)
 
         ret, jpeg = cv2.imencode('.jpg', image)
-
         return jpeg.tobytes()
 
 
