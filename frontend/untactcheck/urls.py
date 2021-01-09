@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.http import StreamingHttpResponse
 
 from camera import VideoCamera, gen
-
+#webapp 폴더에 있는 urls.py를 포함시키겠따.
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('monitor/', lambda r: StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')),
+    #path('monitor/', lambda r: StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')),
+    path('', include('webapp.urls')),
 ]
